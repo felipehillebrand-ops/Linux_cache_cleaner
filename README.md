@@ -1,125 +1,179 @@
-# 🧹 Linux Cache Cleaner
+# 🧹 Linux Cache Cleaner 2.0
 
-A simple Linux script to automatically clean cache and temporary files at login.
+A lightweight Bash script to safely remove common cache and temporary files on Linux **without requiring `sudo`**.
 
-This repository includes:
+Linux Cache Cleaner 2.0 supports modern development environments, including Python, AI tools, browsers, IDEs, shells, and virtualization software.
 
-- `clean-cache.sh` → main cleanup script
-- `.profile` → automatically runs the script on login
+---
+
+# ✨ What's New in Version 2.0
+
+- 🐍 Added Python development cache cleanup
+- 🤖 Added Hugging Face cache cleanup
+- ⚡ Added `uv` cache cleanup
+- 📦 Added Poetry cache cleanup
+- 🔥 Added PyTorch cache cleanup
+- 🎨 Added Matplotlib cache cleanup
+- 🧪 Added pytest, mypy, Ruff and Pytype caches
+- 🐟 Added Fish shell cache cleanup
+- 🖥️ Added Vim and Neovim cleanup
+- 💻 Added Oracle VM VirtualBox log cleanup
+- 🛡️ Added safety checks before execution
+- ✅ Compatible with standard (non-root) Linux users
 
 ---
 
 # 📦 What Gets Cleaned
 
-## General Cache
-- `~/.cache/*`
+## Browsers
 
-## Google Chrome
+### Google Chrome
 - Cache
 - Code Cache
 - GPU Cache
 - Service Worker Cache
 
-## Firefox (Snap)
+### Firefox (Snap)
 - Cache
 - Startup Cache
 - Thumbnails
-- Service Workers
+- Service Worker Cache
 
-## Slack
+---
+
+## Development Tools
+
+### Slack
 - Cache
 - Code Cache
 - GPU Cache
 
-## VSCode
+### Visual Studio Code
 - Cache
 - CachedData
 - Logs
 - GPU Cache
-- Service Workers
+- Service Worker
 - Crashpad
 
-## System Trash
-- `~/.local/share/Trash/*`
+### Vim
+- Temporary files
+- Swap files
+- Backup files
+- Undo files
+
+### Neovim
+- Cache
+- Swap files
+- ShaDa
+
+### Oracle VM VirtualBox
+- Log files
+- Cache
+
+---
+
+## Python
+
+- pip
+- Poetry
+- PyTorch
+- Hugging Face
+- Matplotlib
+- `__pycache__`
+- `.pytest_cache`
+- `.mypy_cache`
+- `.ruff_cache`
+- `.pytype`
+
+---
+
+## Shells
+
+### Zsh
+- zcompdump
+- zcompcache
+
+### Oh My Zsh
+- Cache
+
+### Fish
+- Cache
+- Generated completions
+
+---
+
+## Package Managers
+
+### uv
+- Package cache (official cleanup command)
+
+### npm
+- Package cache
+
+---
+
+## System
+
+- Trash (`~/.local/share/Trash`)
 
 ---
 
 # 🚀 Installation
 
-## 1. Clone the repository
+Clone the repository:
 
 ```bash
-git clone <repo-url>
-cd <repo>
+git clone https://github.com/felipehillebrand-ops/linux-cache-cleaner.git
+cd linux-cache-cleaner
 ```
 
----
-
-## 2. Make the script executable
+Make the script executable:
 
 ```bash
 chmod +x clean-cache.sh
 ```
 
----
-
-## 3. Copy the script to your HOME directory
+Run it:
 
 ```bash
-cp clean-cache.sh ~/
+./clean-cache.sh
 ```
 
 ---
 
-## 4. Configure automatic execution
+# ⚠️ Safety
 
-Add the following to your `~/.profile`:
+This script:
 
-```bash
-if [ -f "$HOME/clean-cache.sh" ]; then
-    bash "$HOME/clean-cache.sh"
-fi
+- ✅ does **not** require `sudo`
+- ✅ only removes cache and temporary files
+- ✅ does **not** remove project source code
+- ✅ does **not** remove Python virtual environments (`.venv`, `venv`)
+- ✅ does **not** remove VirtualBox virtual machines
 
-echo "🔵 ~/.profile executed at $(date)" >> "$HOME/.profile_log"
-```
-
----
-
-# ▶️ Run Manually
-
-```bash
-bash ~/clean-cache.sh
-```
-
----
-
-# 📝 Logs
-
-Every `.profile` execution is logged in:
-
-```bash
-~/.profile_log
-```
-
----
-
-# ⚠️ Warning
-
-- This script only removes cache and temporary files.
-- It does not remove personal data.
-- Some applications may start slightly slower after cleanup because caches need to be rebuilt.
+Some applications may start slightly slower after the first launch because caches will be rebuilt automatically.
 
 ---
 
 # 🐧 Compatibility
 
 Tested on:
+
 - Ubuntu
+
+The script should also work on most Debian-based Linux distributions.
 
 ---
 
-## 👨‍💻 Author
+# 📄 License
 
-Felipe José Hillebrand
+This project is released under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Felipe José Hillebrand**
 
 GitHub: https://github.com/felipehillebrand-ops
