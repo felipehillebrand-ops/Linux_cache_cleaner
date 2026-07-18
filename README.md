@@ -168,7 +168,7 @@ The script should also work on most Debian-based Linux distributions.
 
 # 📄 License
 
-This project is released under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
